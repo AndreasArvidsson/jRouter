@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>jRouter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="jRouter - jQuery based router to create single page applications">
+        <meta name="author" content="Andreas Arvidsson">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <link rel="stylesheet" href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/page1">Page 1</a></li>
+                    <li><a href="#/page2">Page 2</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="main-content"></div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="jRouter.js"></script>
+        <script>
+            jRouter({
+                target: "#main-content",
+                navbar: {
+                    selector: ".navbar-nav",
+                    parent: true,
+                    class: "active"
+                }
+            });
+            jRouter.add("/", "home.html");
+            jRouter.add("/page1", "page1.html");
+            jRouter.add("/page2", "page2.html");
+            jRouter.add("404", "404.html");
+        </script>
+
+    </body>
+</html>
