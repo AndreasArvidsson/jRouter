@@ -405,8 +405,6 @@
             }
             //Page loaded succesfully
             else {
-                //Format the document.
-                formatDocument(target);
                 //Call success callback if available.
                 if (_options.callbacks.success) {
                     _options.callbacks.success(route, response);
